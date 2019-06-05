@@ -55,9 +55,10 @@ clear all
 
 
 %load data file with data from paleosols of interest
-load paleosol_CO2_error_quant.txt
-[m,n] = size(paleosol_CO2_error_quant);
+Table = readtable ('paleosol_CO2_error_quant.xlsx');
+paleosol_CO2_error_quant = Table{:,:};
 
+[m,n] = size(paleosol_CO2_error_quant);
 
 %This loop pulls ages out of data file and creates an array
 for i=1:n
